@@ -697,46 +697,82 @@ console.log(chartColors.ohioLight);
         labels: data.map((row)=>row.team),
         datasets: [
             {
-                label: data.map((row)=>row.label),
+                label: "hello",
                 data: data.map((row)=>row.score),
                 backgroundColor: data.map((row)=>row.color),
                 barPercentage: 1
             }, 
         ]
     };
-    //   const barChartData = {
-    //     labels: data.map((row) => row.team),
-    //     datasets: [
-    //       {
-    //         label: "American Express",
-    //         backgroundColor: chartColors.ohioLighter,
-    //         borderColor: chartColors.ohioLight,
-    //         borderWidth: 1,
-    //         data: [3, 5, 6, 7, 3, 5, 6, 7],
-    //       },
-    //       {
-    //         label: "Mastercard",
-    //         backgroundColor: chartColors.ohioLight,
-    //         borderColor: chartColors.ohioLighter,
-    //         borderWidth: 1,
-    //         data: [4, 7, 3, 6, 10, 7, 4, 6],
-    //       },
-    //       {
-    //         label: "Paypal",
-    //         backgroundColor: chartColors.alleLighter,
-    //         borderColor: chartColors.alleLight,
-    //         borderWidth: 1,
-    //         data: [10, 7, 4, 6, 9, 7, 3, 10],
-    //       },
-    //       {
-    //         label: "Visa",
-    //         backgroundColor: chartColors.alleLight,
-    //         borderColor: chartColors.alleLighter,
-    //         borderWidth: 1,
-    //         data: [6, 9, 7, 3, 10, 7, 4, 6],
-    //       },
-    //     ],
-    //   };
+    const barChartData = {
+        labels: data.map((row)=>row.team),
+        datasets: [
+            {
+                label: "American Express",
+                backgroundColor: chartColors.ohioLighter,
+                borderColor: chartColors.ohioLight,
+                borderWidth: 1,
+                data: [
+                    3,
+                    5,
+                    6,
+                    7,
+                    3,
+                    5,
+                    6,
+                    7
+                ]
+            },
+            {
+                label: "Mastercard",
+                backgroundColor: chartColors.ohioLight,
+                borderColor: chartColors.ohioLighter,
+                borderWidth: 1,
+                data: [
+                    4,
+                    7,
+                    3,
+                    6,
+                    10,
+                    7,
+                    4,
+                    6
+                ]
+            },
+            {
+                label: "Paypal",
+                backgroundColor: chartColors.alleLighter,
+                borderColor: chartColors.alleLight,
+                borderWidth: 1,
+                data: [
+                    10,
+                    7,
+                    4,
+                    6,
+                    9,
+                    7,
+                    3,
+                    10
+                ]
+            },
+            {
+                label: "Visa",
+                backgroundColor: chartColors.alleLight,
+                borderColor: chartColors.alleLighter,
+                borderWidth: 1,
+                data: [
+                    6,
+                    9,
+                    7,
+                    3,
+                    10,
+                    7,
+                    4,
+                    6
+                ]
+            }, 
+        ]
+    };
     const chartOptions = {
         indexAxis: "y",
         responsive: true,
