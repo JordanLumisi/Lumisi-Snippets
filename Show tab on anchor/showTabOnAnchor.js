@@ -61,7 +61,7 @@ jQuery(document).ready(function () {
         "current-tab"
       );
       jQuery(".content").hide();
-      jQuery(".content.activheal").show();
+      jQuery(".content." + anchor).show();
     } else {
       // Code to run when the anchor link is not present
       console.log("Anchor link not found: #" + anchor);
