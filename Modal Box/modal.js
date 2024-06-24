@@ -49,7 +49,7 @@ modalBtnNames.forEach((btnID, index) => {
 
 /* 
 
-Skeleton code
+Skeleton code:
 
 click on button
     get index of btn
