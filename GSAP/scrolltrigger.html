@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Scroll Animation</title>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- ScrollTrigger plugin CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      height: 300vh; /* Increased height to ensure scroll space */
+      padding: 50px;
+    }
+
+    .box {
+      opacity: 0;
+      transform: translateY(50px);
+      margin: 20px 0;
+      padding: 20px;
+      background-color: lightcoral;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">Content 1</div>
+    <div class="box">Content 2</div>
+    <div class="box">Content 3</div>
+  </div>
+
+  <script>
+    // Initialize GSAP timeline with ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    const boxes = document.querySelectorAll('.box');
+
+    // Loop over each box to create an animation
+    boxes.forEach((box) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: box, // Trigger each div individually
+          start: "top 90%", // Trigger animation when div is near the viewport bottom
+          end: "top 50%", // End when div reaches 50% of the viewport
+          scrub: true,    // Smooth scrolling-based control
+          toggleActions: "play reverse play reverse", // Reverse on scroll up
+          markers: true // Enable debug markers to see where the trigger points are
+        }
+      })
+      .fromTo(box, {
+        opacity: 0,
+        y: 50, // Start position (from the bottom)
+      }, {
+        opacity: 1,
+        y: 0,  // Final position (no vertical movement)
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+  </script>
+
+</body>
+</html>
