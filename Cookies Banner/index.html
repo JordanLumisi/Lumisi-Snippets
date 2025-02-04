@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cookies Banner</title>
+		<style>
+			.cookie-banner {
+				position: fixed;
+				bottom: 40px;
+				left: 10%;
+				right: 10%;
+				width: 80%;
+				padding: 5px 14px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background-color: #eee;
+				border-radius: 5px;
+				box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+			}
+			.close {
+				height: 20px;
+				background-color: #777;
+				border: none;
+				color: white;
+				border-radius: 2px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cookie-banner" style="display: none">
+			<p>
+				Our website (morgan-morgan.co.uk) uses cookies to deliver a better and more personalised
+				service to users. This Cookie Policy explains what cookies are, how they are used on the
+				site and how to manage their use: <a href="/cookies">Cookie Policy</a>
+			</p>
+			<p>By using our website, you agree to our <a href="/cookies">cookie policy</a></p>
+			<button class="close">Close</button>
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+
+		<script>
+			if (localStorage.getItem("cookieSeen") != "shown") {
+				$(".cookie-banner").delay(2000).fadeIn();
+				localStorage.setItem("cookieSeen", "shown");
+			}
+
+			$(".close").click(function () {
+				$(".cookie-banner").fadeOut();
+			});
+		</script>
+	</body>
+</html>
